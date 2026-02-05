@@ -1,0 +1,279 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    border-color: theme('colors.orchard.100');
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-cream-100 text-earth font-body antialiased;
+  }
+
+  ::selection {
+    @apply bg-sunbeam text-earth-700;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display text-earth-600;
+  }
+}
+
+@layer components {
+  /* Buttons — rounded, warm, deliberate transitions */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 font-body font-semibold text-sm
+           uppercase tracking-wider py-3 px-8 rounded-full
+           transition-all duration-500 ease-harvest
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-primary {
+    @apply btn bg-earth-500 text-cream-50 hover:bg-earth-600 active:bg-earth-700;
+  }
+
+  .btn-secondary {
+    @apply btn bg-transparent border-2 border-earth-300 text-earth-500
+           hover:bg-earth-50 hover:border-earth-400;
+  }
+
+  .btn-ghost {
+    @apply btn bg-transparent text-earth-400 hover:text-earth-600;
+  }
+
+  .btn-danger {
+    @apply btn bg-transparent border-2 border-red-400 text-red-600
+           hover:bg-red-50;
+  }
+
+  .btn-sm {
+    @apply px-4 py-1.5 text-xs;
+  }
+
+  .btn-lg {
+    @apply py-4 px-10 text-base;
+  }
+
+  /* Cards — light, elevated surfaces */
+  .card {
+    @apply bg-white border border-orchard-50/50 rounded-2xl p-6 shadow-sm;
+  }
+
+  .card-hover {
+    @apply card hover:shadow-lg hover:-translate-y-1 transition-all duration-500 ease-harvest;
+  }
+
+  /* Glass panels — frosted translucent surfaces */
+  .glass {
+    @apply bg-white/80 backdrop-blur-xl border border-sunbeam-200/30;
+  }
+
+  /* Elevated surface (warmer than base) */
+  .surface {
+    @apply bg-sunbeam-50;
+  }
+
+  /* Form inputs — clean, warm focus states */
+  .input {
+    @apply w-full px-4 py-3 bg-white border border-orchard-200 rounded-xl font-body
+           text-earth-500 placeholder:text-orchard-300
+           focus:ring-2 focus:ring-leaf-400 focus:border-leaf-400 outline-none
+           transition-all duration-500 ease-harvest;
+  }
+
+  .textarea {
+    @apply input min-h-[120px] resize-y;
+  }
+
+  .label {
+    @apply block font-body font-semibold text-xs uppercase tracking-[0.2em] text-earth-400 mb-2;
+  }
+
+  .field-label {
+    @apply block font-body text-sm font-medium text-earth-500 mb-1.5;
+  }
+
+  /* Navigation — tracked uppercase, warm hover */
+  .nav-link {
+    @apply font-body font-medium text-sm uppercase tracking-[0.15em] text-earth-400
+           hover:text-earth-600 transition-colors duration-500 relative inline-block;
+  }
+
+  .nav-link::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-leaf-500 rounded-full
+           transition-all duration-500 ease-harvest;
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+
+  .nav-link-active {
+    @apply text-earth-600;
+  }
+
+  .nav-link-active::after {
+    @apply w-full;
+  }
+
+  /* Badges */
+  .badge {
+    @apply inline-flex items-center px-3 py-1 text-xs font-body font-semibold rounded-full;
+  }
+
+  .badge-fresh {
+    @apply badge bg-leaf-100 text-leaf-700;
+  }
+
+  .badge-earth {
+    @apply badge bg-earth-50 text-earth-600;
+  }
+
+  .badge-sunbeam {
+    @apply badge bg-sunbeam-200 text-earth-600;
+  }
+
+  .badge-success {
+    @apply badge bg-green-100 text-green-700;
+  }
+
+  .badge-warning {
+    @apply badge bg-amber-100 text-amber-700;
+  }
+
+  .badge-danger {
+    @apply badge bg-red-100 text-red-700;
+  }
+
+  /* Tab navigation */
+  .tab {
+    @apply font-body font-medium text-sm text-orchard-400 pb-3 border-b-2 border-transparent
+           hover:text-earth-500 transition-all duration-500 cursor-pointer whitespace-nowrap;
+  }
+
+  .tab-active {
+    @apply text-earth-600 border-leaf-500;
+  }
+
+  /* Tables — warm, light themed */
+  .table {
+    @apply w-full text-left font-body;
+  }
+
+  .table th {
+    @apply px-4 py-3 text-xs font-semibold uppercase tracking-wider text-earth-400
+           bg-sunbeam-50 border-b border-orchard-50;
+  }
+
+  .table td {
+    @apply px-4 py-4 text-sm text-earth-500 border-b border-orchard-50;
+  }
+
+  .table tr:hover td {
+    @apply bg-sunbeam-50/50;
+  }
+
+  /* Avatar */
+  .avatar {
+    @apply flex items-center justify-center rounded-full bg-leaf-100 text-earth-600 font-display font-semibold;
+  }
+
+  .avatar-sm {
+    @apply w-8 h-8 text-sm;
+  }
+
+  .avatar-md {
+    @apply w-12 h-12 text-lg;
+  }
+
+  .avatar-lg {
+    @apply w-20 h-20 text-2xl;
+  }
+
+  /* Section spacing */
+  .section {
+    @apply px-6 py-20 lg:py-28;
+  }
+
+  .section-tight {
+    @apply px-6 py-14;
+  }
+
+  /* Progress bar */
+  .progress-bar {
+    @apply w-full h-1.5 bg-orchard-100 rounded-full overflow-hidden;
+  }
+
+  .progress-bar-fill {
+    @apply h-full bg-leaf-500 rounded-full transition-all duration-900 ease-harvest;
+  }
+}
+
+/* Scroll-triggered reveal animation — The Gentle Reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger delays for child elements */
+.stagger-1 { transition-delay: 0.15s; }
+.stagger-2 { transition-delay: 0.3s; }
+.stagger-3 { transition-delay: 0.45s; }
+.stagger-4 { transition-delay: 0.6s; }
+.stagger-5 { transition-delay: 0.75s; }
+
+/* Warm bokeh glow — floating background accent */
+.bokeh-glow {
+  background: radial-gradient(ellipse at 50% 50%, rgba(240, 228, 145, 0.12), transparent 70%);
+  animation: breathe 8s ease-in-out infinite;
+}
+
+/* Sunbeam shimmer effect */
+.shimmer {
+  background: linear-gradient(
+    110deg,
+    transparent 25%,
+    rgba(240, 228, 145, 0.15) 37%,
+    transparent 50%
+  );
+  background-size: 400% 100%;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+/* Custom scrollbar — light theme */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FFFEF7;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #BDD4B7;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9CBF93;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
