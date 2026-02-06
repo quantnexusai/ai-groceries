@@ -2,7 +2,7 @@
 
 An AI-powered online grocery delivery platform built with Next.js 15, React 19, Supabase, Claude API, and Stripe. Designed around "The Harvest Table" philosophy -- abundant, warm, and grounded in real food provenance.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fquantnexusai%2Fai-groceries&env=NEXT_PUBLIC_SUPABASE_URL,NEXT_PUBLIC_SUPABASE_ANON_KEY,SUPABASE_SERVICE_ROLE_KEY,STRIPE_SECRET_KEY,STRIPE_WEBHOOK_SECRET,ANTHROPIC_API_KEY&project-name=ai-groceries&repository-name=ai-groceries)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fquantnexusai%2Fai-groceries&env=NEXT_PUBLIC_SUPABASE_URL,NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY,SUPABASE_SECRET_KEY,STRIPE_SECRET_KEY,STRIPE_WEBHOOK_SECRET,ANTHROPIC_API_KEY&project-name=ai-groceries&repository-name=ai-groceries)
 
 <!-- Screenshots -->
 <!-- ![Homepage](docs/screenshots/homepage.png) -->
@@ -97,16 +97,16 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## Environment Variables
 
-| Variable                        | Required | Description                                    |
-| ------------------------------- | -------- | ---------------------------------------------- |
-| `NEXT_PUBLIC_SUPABASE_URL`      | Yes      | Your Supabase project URL                      |
-| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Yes      | Your Supabase anonymous/public key             |
-| `SUPABASE_SERVICE_ROLE_KEY`     | Yes      | Your Supabase service role key (server-side)   |
-| `STRIPE_SECRET_KEY`             | Yes      | Your Stripe secret key                         |
-| `STRIPE_WEBHOOK_SECRET`         | Yes      | Your Stripe webhook signing secret             |
-| `ANTHROPIC_API_KEY`             | Yes      | Your Anthropic API key for Claude              |
-| `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY` | No  | Stripe publishable key (client-side)           |
-| `NEXT_PUBLIC_BASE_URL`          | No       | Base URL for the app (defaults to localhost)    |
+| Variable                              | Required | Description                                    |
+| ------------------------------------- | -------- | ---------------------------------------------- |
+| `NEXT_PUBLIC_SUPABASE_URL`            | Yes      | Your Supabase project URL                      |
+| `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`| Yes      | Your Supabase publishable key (client-side)    |
+| `SUPABASE_SECRET_KEY`                 | Yes      | Your Supabase secret key (server-side)         |
+| `STRIPE_SECRET_KEY`                   | Yes      | Your Stripe secret key                         |
+| `STRIPE_WEBHOOK_SECRET`               | Yes      | Your Stripe webhook signing secret             |
+| `ANTHROPIC_API_KEY`                   | Yes      | Your Anthropic API key for Claude              |
+| `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY`  | No       | Stripe publishable key (client-side)           |
+| `NEXT_PUBLIC_BASE_URL`                | No       | Base URL for the app (defaults to localhost)   |
 
 When environment variables are not set, the app automatically enters **demo mode**.
 
